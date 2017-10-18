@@ -20,7 +20,10 @@ export PATH=<path to download location>/bin:$PATH
 
 ```
 cd $CHAINCODE_DIR
-go build
+go get -u --tags nopkcs11 github.com/hyperledger/fabric/core/chaincode/shim
+go get -u --tags nopkcs11 github.com/hyperledger/fabric/protos/peer
+go get -u --tags nopkcs11 github.com/op/go-logging
+go build --tags nopkcs11
 ```
 
 ## start chain-code
